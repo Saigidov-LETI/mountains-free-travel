@@ -1,0 +1,17 @@
+
+@font-face {
+    font-family: 'Bringin';
+    src: url('../fonts/bringin-webfont.woff2') format('woff2'),
+         url('../fonts/bringin-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'League_gothic';
+    src: url('../fonts/leaguegothic-regular-webfont.woff2') format('woff2'),
+         url('../fonts/leaguegothic-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
