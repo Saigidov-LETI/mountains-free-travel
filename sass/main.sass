@@ -2,43 +2,70 @@ $opens: Open Sans
 $leag: League_gothic
 $blue: #36aeea
 
+
 .wrapper
 	max-width: 60%
 	margin: 0 auto
 
+@media screen and (max-width: 320px)
+	.wrapper
+		max-width: 90%
+
+	.navigation, .menu__list
+		flex-direction: column
+		align-items: center
+		justify-content: center
+
+	.header
+		padding-bottom: 0
+
 .header
 	background: url(../img/header-bg.png) no-repeat
-	padding-bottom: 130px  
+	background-size: 100%
+	padding-bottom: 130px
+	
 
 .navigation
 	display: flex
 	justify-content: space-between
 	align-items: center
-	padding-top: 22px
-	padding-bottom: 20px
+	flex-wrap: wrap
+	margin-bottom: 133px
 
 	&__left
-		display: flex	
-		justify-content: flex-start
+		display: flex
 		align-items: center
+		flex-wrap: wrap
 
-.logo
+	&__right
+		padding-top: 22px
+
+	.navigation__right
+		padding-top: 0
+
+.logo-nav
 	display: flex
+	margin-right: 60px
 
 	&__text
 		font-family: Bringin
 		font-size: 29px
 		font-style: italic
 		color: #95a5ad
-		padding-right: 60px
-		margin-left: 18px
+		padding-left: 18px
 
 		&--part
 			color: $blue
 
+	// .logo-nav
+	// 	margin-right: 30px
+
+	// 	&__text
+	// 		padding-left: 0
+	
+
 .menu
 	display: flex
-	padding-top: 10px
 
 	&__list
 		list-style: none
@@ -50,8 +77,10 @@ $blue: #36aeea
 		font-size: 12px
 		font-family: $opens
 		margin-right: 25px
-		padding-bottom: 8px
 		border-bottom: 2px solid transparent
+
+	&__list__item:last-child
+		margin-right: 0
 
 	&__list__item:hover
 		border-bottom-color: $blue
@@ -63,7 +92,12 @@ $blue: #36aeea
 		text-transform: uppercase
 		color: #95a5ad
 
-.header-btn__link
+@media screen and (max-width: 768px)
+	.menu__list__item
+		margin-right: 10px
+
+
+.header-btn
 		display: flex
 		justify-content: center
 		align-items: center
@@ -76,8 +110,11 @@ $blue: #36aeea
 		border-radius: 5px
 		padding: 15px 43px
 
+@media screen and (max-width: 768px)
+	.header-btn
+		padding: 10px 15px
+	
 .banner
-	margin-top: 133px
 	border: 3px solid white
 	padding-top: 35px
 	padding-left: 35px
@@ -104,22 +141,25 @@ $blue: #36aeea
 	color: #d4d9dc
 	font-size: 18px
 	font-family: $opens
-	margin-top: 25px
+	// margin-top: 25px
 	margin-bottom: 30px
 	line-height: 1.5
 
-.banner-btn
-	display: inline-block
-	background-color: $blue
+.btn
+	background: $blue
 	border-radius: 5px
-	text-transform: uppercase
-	font-family: Raleway
-	font-size: 14px
-	font-weight: bold
 	color: #fff
+	display: inline-block
+	font-family: $opens
+	font-weight: bold
+	letter-spacing: 2px
+	text-transform: uppercase
+	font-size: 16px
+
+.btn--banner
+	font-size: 14px
 	padding: 23px 75px
 	margin-bottom: 40px
-	letter-spacing: 2px
 
 .blog
 	position: relative
@@ -128,10 +168,17 @@ $blue: #36aeea
 .blog-bg
 	background-image: url("../img/Vector-Smart-Object.png")
 	background-repeat: no-repeat
+	display: flex
+	align-items: center
+	justify-content: center
 	
 .blog-content
-	padding-top: 200px
-	display: inline-block
+	// padding-top: 200px
+	// display: inline-block
+	width: 30%
+
+	&__title
+		padding-top: 41px
 	
 	&__text
 		font-family: $opens
@@ -139,45 +186,43 @@ $blue: #36aeea
 		font-size: 20px
 		color: black
 		text-transform: uppercase
-		margin-top: 41px
 	
+	&__about
+		padding-bottom: 30px
+		padding-top: 30px
+
 	&__description
 		font-family: $opens
 		font-size: 14px
 		font-weight: normal
 		color: #a8a7a7
-		margin-bottom: 30px
-		margin-top: 30px
 		line-height: 1.5
 	
 	&__btn
-		display: inline-block
-		background: $blue
-		border-radius: 5px
-		font-family: $opens
-		font-weight: bold
 		font-size: 12px
-		color: white
-		text-transform: uppercase
-		padding: 15px 25px
-		letter-spacing: 2px
 		margin-bottom: 232px
-
+		padding: 15px 25px
+		
 .blog-photo
-	position: absolute
-	display: inline-block
+	position: relative
+	// // top: -36px
+	// display: inline-block
+	width: 70%
+	padding-top: 50%
 
 .photo__big
-	margin-left: 192px
+	// // padding-left: 192px
 	position: absolute
-	z-index: 14
-	top: -36px
-
-.photo__small
-	margin-top: 277px
-	margin-left: 103px
+	top: -10%
+	left: 10%
+	max-width: 100%
+	
+.photo__small 
+	// padding-top: 313px
+	// padding-left: 103px
 	position: absolute
-	z-index: 15
+	bottom: 5%
+	max-width: 100%
 
 .line-center
 	display: block
@@ -220,6 +265,10 @@ $blue: #36aeea
 	
 	&__content
 		padding: 45px 30px
+
+@media screen and (max-width: 768px)
+	.post-list
+		flex-direction: column
 
 .post__img
   position: relative
@@ -365,16 +414,7 @@ $blue: #36aeea
 	margin-right: 0
 
 .offer__btn
-	display: inline-block
 	padding: 26px 57px
-	background: $blue
-	border-radius: 5px
-	font-family: $opens
-	font-weight: bold
-	font-size: 16px
-	color: #fff
-	text-transform: uppercase
-	letter-spacing: 2px
 
 .offer-form
 	width: 850px
@@ -644,7 +684,7 @@ $blue: #36aeea
 		font-size: 16px
 		margin-bottom: 34px
 
-.call-me__input, .call-me__btn
+.call-me__input
 	display: block
 	width: 90%
 	height: 60px
@@ -656,11 +696,10 @@ $blue: #36aeea
 	padding-left: 20px
 	
 .call-me__btn
-	color: #fff
-	background-color: $blue
-	font-family: $opens
-	font-size: 16px
-	font-weight: bold
+	width: 90%
+	height: 60px
+	border: none
+	margin: 0 auto 20px auto
 
 .call-me__input input[placeholder]
 	font-family: Roboto
